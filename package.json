@@ -1,0 +1,29 @@
+{
+  "name": "starterkit-kirbycms",
+  "version": "1.0.0",
+  "description": "Kirby CMS with Vite integration for asset handling and HMR.",
+  "type": "module",
+  "scripts": {
+    "vite:dev": "VITE_ENV_MODE=dev vite",
+    "vite:host": "VITE_ENV_MODE=host vite",
+    "server:local": "php -S localhost:8888 ./kirby/router.php",
+    "server:host": "php -S $(node scripts/get-ip.mjs):8888 ./kirby/router.php",
+    "dev": "node scripts/set-env.mjs && concurrently \"npm:server:local\" \"npm:vite:dev\" -c yellow,green",
+    "host": "node scripts/set-env.mjs && concurrently \"npm:server:host\" \"npm:vite:host\" -c yellow,green",
+    "build": "node scripts/set-env.mjs && vite build",
+    "preview": "npm run build && npm run server:local"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "normalize.css": "^8.0.1",
+    "sass": "^1.68.0",
+    "vite": "^5.4.17",
+    "vite-plugin-full-reload": "^1.2.0"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.0",
+    "dotenv": "^16.4.5"
+  }
+}

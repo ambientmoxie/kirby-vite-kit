@@ -1,0 +1,1 @@
+<footer>Kirby's foot</footer>
