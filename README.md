@@ -1,24 +1,8 @@
-# Getting Started with the Starter Kit
+# Kirby + Vite Starter Kit
 
-Follow these steps to set up the project:
+A personal [Kirby CMS](https://getkirby.com) setup with Vite for modern front-end bundling — including HMR, SCSS, ESModules, and hashed assets for production.  
+For more information about Kirby, visit [getkirby.com](https://getkirby.com).
 
-1. **Clone the Repository**:  
-   Use `git clone [repository-url]` to clone the repo to your local machine.
+📦 All details about the bundling and asset serving logic used in this setup can be found in the following repo: [ambientmoxie/vite-php-kit](https://github.com/ambientmoxie/vite-php-kit).<br>
+📄 This is a personal starter kit. You’re welcome to use, modify, and distribute it for personal or commercial use, but it comes with no warranty. Use at your own risk.
 
-2. **Install Dependencies**:  
-   - Run `composer install` to install the correct version of Kirby along with the necessary vendor folders.
-   - Execute `npm install` to install the node_modules folder.
-
-3. **Environment Variables Configuration**:
-    
-    This project uses environment variables to manage settings for development and production. These variables are defined in a .env file located in the project root and are loaded automatically by phpdotenv in ./site/config/config.php.
-
-    - Copy the example file `.env.example` to create your own `.env` file with specific values.
-    - Set VITE_DEV_SERVER_IP to your local IP to allow HMR access across devices on the network.
-    - Set VITE_DEV to true for development mode with HMR or false for production.
-
-4. **Development and Production**:
-   - `npm run dev` makes assets available over the network for development.
-   - `npm run build` bundles CSS and JS assets for production.
-
-   Style and script tags are automatically included in the header based on the VITE_DEV value.
