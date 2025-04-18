@@ -5,5 +5,5 @@ require_once __DIR__ . '/../plugins/helpers/index.php';
 
 return [
     'debug' => configHelper::setDebugMode(),
-    'url'   => configHelper::setEnvURL(),
+    'url'   => configHelper::setEnvURL(":8888", false),
 ];

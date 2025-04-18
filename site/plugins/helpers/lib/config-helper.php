@@ -2,11 +2,12 @@
 
 class configHelper
 {
-    public static function setEnvURL(): ?string
+    public static function setEnvURL(string $port, bool $isSecure): ?string
     {
+        $protocol = $isSecure ? "https://" : "http://";
         return match ($_ENV['VITE_ENV_MODE'] ?? 'dev') {
-            'dev'  => 'localhost',
-            'host' => $_ENV['VITE_LOCAL_IP'] ?? null,
+            'dev'  => $protocol . 'localhost' . $port,
+            'host' => $protocol . $_ENV['VITE_LOCAL_IP'] . $port ?? null,
             default => null
         };
     }
